@@ -46,5 +46,5 @@ function showCommits(element) {
   }).fail(error => {
     displayError()
   })
-  
+
 }
