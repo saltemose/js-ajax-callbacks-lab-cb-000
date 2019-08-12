@@ -39,3 +39,12 @@ function renderCommits (data) {
   let result = data.map((commit) => renderCommit(commit)).join('')
   return `<ul>${result}</ul>`
 }
+
+function showCommits(element) {
+  $.get(`https://api.github.com/repos/${element.dataset.owner}/${element.dataset.repository}/commits`, data => {
+    $('#details').html(renderCommits(data))
+  }).fail(error => {
+    displayError()
+  })
+  
+}
