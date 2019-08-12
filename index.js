@@ -34,3 +34,8 @@ function displayError() {
 function renderCommit (commit) {
   return `<li><h3>${commit.sha}</h3><p>${commit.commit.message}</p></li>`
 }
+
+function renderCommits (data) {
+  let result = data.map((commit) => renderCommit(commit)).join('')
+  return `<ul>${result}</ul>`
+}
