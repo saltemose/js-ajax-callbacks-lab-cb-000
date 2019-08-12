@@ -18,7 +18,7 @@ function displayResults(data) {
   $('#results').html("");
   data.items.map(obj => {
     $('#results').append(`<div>
-      <h2><a href="${obj.html_url}"${obj.name}</a></h2>
+      <h2><a href="${obj.html_url}">${obj.name}</a></h2>
       <p><img src= "${obj.owner.avatar_url}" alt="User Image"></p>
       <p><a href='#' data-repository="${obj.name}" data-owner="${obj.owner.login}" onclick="showCommits(this)">Show Commits</a></p>
       <p> <li>${obj.description}</p>
